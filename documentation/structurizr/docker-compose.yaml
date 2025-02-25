@@ -1,0 +1,9 @@
+services:
+  structurizr:
+    image: structurizr/lite:latest
+    environment:
+      STRUCTURIZR_WORKSPACE_FILENAME: system-landscape
+    volumes:
+      - ./documents:/usr/local/structurizr
+    ports:
+      - "8088:8080"
