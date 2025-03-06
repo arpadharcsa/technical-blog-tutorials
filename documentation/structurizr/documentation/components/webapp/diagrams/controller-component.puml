@@ -1,0 +1,32 @@
+@startuml
+package "Controller Component" {
+    class UserController {
+        +getUser(id: String): User
+        +createUser(user: User): void
+    }
+
+    class ProductController {
+        +getProduct(id: String): Product
+        +createProduct(product: Product): void
+    }
+
+    UserController --> Service : "Invokes"
+    ProductController --> Service : "Invokes"
+}
+
+class Service {
+    +performBusinessLogic(): void
+}
+
+class User {
+    +id: String
+    +name: String
+    +email: String
+}
+
+class Product {
+    +id: String
+    +name: String
+    +price: double
+}
+@enduml
